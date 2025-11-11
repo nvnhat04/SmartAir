@@ -55,6 +55,21 @@ dependencies {
     implementation(libs.play.services.location)
     implementation("com.google.android.libraries.places:places:3.5.0")
     implementation("androidx.navigation:navigation-compose:2.9.2")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+
+    // Vico - Dùng cho biểu đồ đường dự báo AQI
+    implementation("com.patrykandpatrick.vico:compose:2.2.0")
+    implementation("com.patrykandpatrick.vico:core:2.2.0")
+    implementation("com.patrykandpatrick.vico:compose-m3:2.2.0")
+
+    // Converter JSON (Gson)
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+
+    // Coroutine để gọi API async
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+
+    // (tuỳ chọn) OkHttp logging interceptor để debug
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

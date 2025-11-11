@@ -28,6 +28,7 @@ import androidx.activity.result.contract.ActivityResultContracts.StartActivityFo
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -54,12 +55,14 @@ class MainActivity : ComponentActivity() {
 
 
             // Danh sách route được phép hiện bottom bar
-            val bottomBarRoutes = listOf("home", "profile", "notification")
+            val bottomBarRoutes = listOf("home", "profile", "notification", "advisor", "maps")
 //            val bottomAdminBarRoutes = listOf( "profile", "add-product", "admin",)
             val items = listOf(
                 BottomNavItem("Home", Icons.Default.Home, "home"),
-                BottomNavItem("Notification", Icons.Default.Notifications, "Notification"),
-                BottomNavItem("Profile", Icons.Default.Person, "profile"),
+                BottomNavItem("Maps", Icons.Default.LocationOn, "maps"),
+//                BottomNavItem("Notification", Icons.Default.Notifications, "Notification"),
+//                BottomNavItem("Profile", Icons.Default.Person, "profile"),
+                BottomNavItem("Advisor", Icons.Default.LocationOn, "advisor"),
 
 
 
