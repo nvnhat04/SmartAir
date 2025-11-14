@@ -96,15 +96,15 @@ fun HomeScreen(
 
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             // Icon search -> mở màn hình tìm kiếm
-                            IconButton(onClick = {
-                                navController.navigate("search")
-                            }) {
-                                Icon(
-                                    imageVector = Icons.Default.Search,
-                                    contentDescription = "Search",
-                                    tint = MaterialTheme.colorScheme.onSurface
-                                )
-                            }
+//                            IconButton(onClick = {
+//                                navController.navigate("search")
+//                            }) {
+//                                Icon(
+//                                    imageVector = Icons.Default.Search,
+//                                    contentDescription = "Search",
+//                                    tint = MaterialTheme.colorScheme.onSurface
+//                                )
+//                            }
 
                             // Icon notification
                             IconButton(onClick = {

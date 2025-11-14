@@ -11,27 +11,13 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.core.app.ActivityCompat
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.model.*
-import com.google.maps.android.compose.*
-import com.google.android.libraries.places.api.Places
-import com.google.android.libraries.places.widget.Autocomplete
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
-import android.content.Intent
-import androidx.activity.compose.rememberLauncherForActivityResult
+
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.getValue
 
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -40,12 +26,14 @@ import androidx.viewbinding.BuildConfig
 import com.example.smartaq.ui.components.BottomNavItem
 import com.example.smartaq.ui.components.NaviBar
 import com.example.smartaq.ui.navigation.NaviGraph
+import com.google.firebase.FirebaseApp
 import kotlin.collections.contains
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
 
         setContent {
@@ -61,7 +49,7 @@ class MainActivity : ComponentActivity() {
                 BottomNavItem("Home", Icons.Default.Home, "home"),
                 BottomNavItem("Maps", Icons.Default.LocationOn, "maps"),
 //                BottomNavItem("Notification", Icons.Default.Notifications, "Notification"),
-//                BottomNavItem("Profile", Icons.Default.Person, "profile"),
+                BottomNavItem("Analytics", Icons.Default.Info, "analytics"),
                 BottomNavItem("Advisor", Icons.Default.LocationOn, "advisor"),
 
 
