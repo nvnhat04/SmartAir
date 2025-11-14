@@ -9,9 +9,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.smartaq.ui.screens.AccountScreen
 import com.example.smartaq.ui.screens.AdvisorScreen
+import com.example.smartaq.ui.screens.AnalyticsScreen
 import com.example.smartaq.ui.screens.HomeScreen
+import com.example.smartaq.ui.screens.IntroScreen
+import com.example.smartaq.ui.screens.LoginScreen
 import com.example.smartaq.ui.screens.MapsScreen
 import com.example.smartaq.ui.screens.NotificationScreen
+import com.example.smartaq.ui.screens.RegisterScreen
 import com.example.smartaq.ui.screens.SearchScreen
 
 
@@ -21,24 +25,24 @@ fun NaviGraph(navController: NavHostController) {
         navController = navController,
         startDestination = "home"
     ){
-//        composable("main") {
-//            GetLayout (
-//                navController = navController
-//            )
-//        }
-//
-//        composable("login") {
-//            LoginScreen(
-//                viewModel = viewModel(),
-//                navController = navController
-//            )
-//        }
-//        composable("register") {
-//            RegisterScreen(
-//                viewModel = viewModel(),
-//                navController = navController
-//            )
-//        }
+        composable("intro") {
+            IntroScreen (
+                navController = navController
+            )
+        }
+
+        composable("login") {
+            LoginScreen(
+                viewModel = viewModel(),
+                navController = navController
+            )
+        }
+        composable("register") {
+            RegisterScreen(
+                viewModel = viewModel(),
+                navController = navController
+            )
+        }
 
         composable("home") {
             HomeScreen(
@@ -70,13 +74,12 @@ fun NaviGraph(navController: NavHostController) {
 //                viewModel = viewModel()
             )
         }
-//        composable("advisor") {
-//            AdvisorScreen(
-//                navController = navController,
-//                viewModel = viewModel(),
-//
-//            )
-//        }
+        composable("analytics") {
+            AnalyticsScreen(
+                 viewModel = viewModel(),
+
+             )
+        }
         composable(
             route = "advisor?lat={lat}&lon={lon}",
             arguments = listOf(
