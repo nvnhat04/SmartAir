@@ -4,3 +4,12 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
 }
+buildscript {
+    repositories {
+        google() // Đảm bảo dòng này có
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.google.gms:google-services:4.4.4") // Phiên bản mới nhất hoặc phù hợp với Firebase
+    }
+}

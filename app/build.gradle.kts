@@ -1,8 +1,22 @@
+
+
+import java.util.Properties
+import java.io.FileInputStream
+
+val props = Properties().apply {
+    load(FileInputStream(rootProject.file("local.properties")))
+}
+
+val googleMapsKey: String = props.getProperty("GOOGLE_MAPS_API_KEY")
+
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.maps.secrets)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -17,6 +31,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        resValue("string", "google_maps_key", googleMapsKey)
     }
 
     buildTypes {
@@ -53,14 +68,21 @@ dependencies {
 
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
+
+    implementation("com.google.firebase:firebase-auth-ktx:23.2.1")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.4")
+    implementation(platform("com.google.firebase:firebase-bom:34.5.0"))
+
     implementation("com.google.android.libraries.places:places:3.5.0")
     implementation("androidx.navigation:navigation-compose:2.9.2")
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
-
+    implementation ("com.google.accompanist:accompanist-permissions:0.30.1")
     // Vico - Dùng cho biểu đồ đường dự báo AQI
     implementation("com.patrykandpatrick.vico:compose:2.2.0")
     implementation("com.patrykandpatrick.vico:core:2.2.0")
     implementation("com.patrykandpatrick.vico:compose-m3:2.2.0")
+    implementation ("com.google.maps.android:android-maps-utils:3.8.0")
+
 
     // Converter JSON (Gson)
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")

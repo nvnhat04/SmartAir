@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">smartaq</string>
+    <string name="app_name">Smart Air</string>
+
+<!--    <string name="google_maps_key">YOUR_API_KEY_HERE</string>-->
+
+
 </resources>
