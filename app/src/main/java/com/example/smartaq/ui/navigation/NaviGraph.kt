@@ -17,6 +17,7 @@ import com.example.smartaq.ui.screens.MapsScreen
 import com.example.smartaq.ui.screens.NotificationScreen
 import com.example.smartaq.ui.screens.RegisterScreen
 import com.example.smartaq.ui.screens.SearchScreen
+import com.example.smartaq.ui.screens.WeatherScreen
 
 
 @Composable
@@ -48,6 +49,12 @@ fun NaviGraph(navController: NavHostController) {
             HomeScreen(
 //                viewModel = viewModel(),
                 navController = navController
+            )
+        }
+        composable("weather") {
+            WeatherScreen(
+                viewModel = viewModel(),
+//                navController = navController
             )
         }
         composable("maps") {

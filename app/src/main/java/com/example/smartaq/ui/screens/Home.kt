@@ -186,7 +186,9 @@ fun HomeScreen(
                     }
                 }
 
-                Button(onClick = { /* thêm địa điểm khác */ }) {
+                Button(onClick = {
+                    navController.navigate("weather")
+                }) {
                     Text("Thêm địa điểm")
                 }
             }
