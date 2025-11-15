@@ -11,7 +11,8 @@ data class WeatherResponse(
 data class Hourly(
     val time: List<String>,
     val temperature_2m: List<Double>,
-    val relativehumidity_2m: List<Double>?
+    val relativehumidity_2m: List<Double>?,
+    val windspeed_10m: List<Double>
 )
 
 data class Daily(
@@ -26,12 +27,5 @@ data class CurrentWeather(
     val winddirection: Int,
     val weathercode: Int
 )
-data class DailyUI(
-    val dayLabel: String,
-    val aqi: Int,
-    val weatherCode: Int,
-    val tempMax: Double,
-    val tempMin: Double,
-    val windSpeed: Double
-)
+
 

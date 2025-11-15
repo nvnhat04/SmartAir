@@ -13,7 +13,7 @@ class WeatherRepository {
         val url = "https://api.open-meteo.com/v1/forecast" +
                 "?latitude=$lat&longitude=$lon" +
                 "&current_weather=true" +
-                "&hourly=temperature_2m,relativehumidity_2m,precipitation,windspeed_10m" +
+                "&hourly=windspeed_10m" +
                 "&daily=temperature_2m_max,temperature_2m_min,uv_index_max" +
                 "&timezone=auto"
 
